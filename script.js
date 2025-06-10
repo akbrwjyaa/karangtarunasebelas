@@ -23,6 +23,46 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
     const target = document.querySelector(btn.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+      <script>
+  let slideIndex = 0;
+  const track = document.getElementById('sliderTrack');
+
+  function moveSlide(direction) {
+    const slides = document.querySelectorAll('#sliderTrack img');
+    const maxSlide = slides.length - 1;
+
+    slideIndex += direction;
+    if (slideIndex < 0) slideIndex = maxSlide;
+    if (slideIndex > maxSlide) slideIndex = 0;
+
+    const offset = slideIndex * (slides[0].offsetWidth + 40); // width + gap
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  // Auto slide every 4 seconds
+  setInterval(() => moveSlide(1), 4000);
+
+  function filterTahun(tahun) {
+    const cards = document.querySelectorAll(".kegiatan-card");
+    const sponsor = document.getElementById("sponsorSection");
+
+    cards.forEach(card => {
+      if (tahun === "all" || card.dataset.tahun === tahun) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Toggle sponsor slider
+    sponsor.style.display = (tahun === "2024") ? "block" : "none";
+
+    // Update active chip
+    document.querySelectorAll(".year-chip").forEach(c => c.classList.remove("active"));
+    document.querySelector(`.year-chip[onclick*="${tahun}"]`).classList.add("active");
+  }
+</script>
+
     }
   });
 });

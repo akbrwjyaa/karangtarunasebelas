@@ -1,0 +1,137 @@
+/* Background dan Font */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1f1f1f, #2c3e50);
+  color: white;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+.filter-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.filter-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.filter-buttons button.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+.filter-container {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.filter-container select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #444;
+  color: white;
+  outline: none;
+}
+/* Galeri */
+.kegiatan-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.kegiatan-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.kegiatan-card:hover {
+  transform: scale(1.03);
+}
+
+.kegiatan-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.kegiatan-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.kegiatan-info h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.kegiatan-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Tombol Kembali ke Beranda Bawah Tengah */
+.back-to-home {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.back-to-home a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.back-to-home a i {
+  margin-right: 8px;
+}
+
+.back-to-home a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}

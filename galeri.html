@@ -4,119 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galeri Kegiatan</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .slider {
-      position: relative;
-      max-width: 800px;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    .slide-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide-track img {
-      width: 100%;
-      flex-shrink: 0;
-      border-radius: 20px;
-      object-fit: cover;
-      height: 450px;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .arrow.left {
-      left: 15px;
-    }
-
-    .arrow.right {
-      right: 15px;
-    }
-
-    a.back-btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    a.back-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-  </style>
+  <link rel="stylesheet" href="style-galeri.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <div class="slider">
-    <div class="arrow left" onclick="prevSlide()">❮</div>
-    <div class="arrow right" onclick="nextSlide()">❯</div>
-    <div class="slide-track" id="slideTrack">
-      <img src="https://source.unsplash.com/800x450/?community,event" alt="Kegiatan 1">
-      <img src="https://source.unsplash.com/800x450/?youth,volunteer" alt="Kegiatan 2">
-      <img src="https://source.unsplash.com/800x450/?social,activity" alt="Kegiatan 3">
-      <img src="https://source.unsplash.com/800x450/?teamwork,neighborhood" alt="Kegiatan 4">
+  <header>
+    <h1>Galeri Kegiatan</h1>
+    <div class="filter-buttons">
+      <button onclick="filterTahun('all')" class="active">Semua</button>
+      <button onclick="filterTahun('2025')">2025</button>
+      <button onclick="filterTahun('2024')">2024</button>
+      <button onclick="filterTahun('2023')">2023</button>
     </div>
+  </header>
+
+  <section class="kegiatan-container" id="kegiatanList">
+    <div class="kegiatan-card" data-tahun="2025">
+      <img src="img/20252.jpg" alt="Kegiatan 1" />
+      <div class="kegiatan-info">
+        <h3>Nyate Bareng Anggota Kartar</h3>
+        <p>7 Juni 2025</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2025">
+      <img src="img/20251.jpg" alt="Kegiatan 2" />
+      <div class="kegiatan-info">
+        <h3>Gotong Royong Membangun Pelmas Rt 11</h3>
+        <p>7 Juni 2025</p>
+      </div>
+    </div>
+    
+    <div class="kegiatan-card" data-tahun="2025">
+      <img src="img/20255.jpg" alt="Kegiatan 2" />
+      <div class="kegiatan-info">
+        <h3>Rapat Membahas Proposal Agustusan</h3>
+        <p>3 Juni 2025</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2025">
+      <img src="img/20254.jpg" alt="Kegiatan 2" />
+      <div class="kegiatan-info">
+        <h3>Jalan-Jalan Anggota Kartar & Ibu PKK</h3>
+        <p>19 April 2025</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2025">
+      <img src="img/20253.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Ketua & Sekretaris</h3>
+        <p>4 Mei 2025</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2024">
+      <img src="img/20241.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Festival Kesenian</h3>
+        <p>7 September 2024</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2024">
+      <img src="img/20245.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Pembagian Doorprize</h3>
+        <p>7 September 2024</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2024">
+      <img src="img/20242.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Lomba Badminton Bapak-Bapak</h3>
+        <p>17 Agustus 2024</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2024">
+      <img src="img/20243.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Lomba Mengeluarkan Bola Dari Kardus</h3>
+        <p>17 Agustus 2024</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2024">
+      <img src="img/20244.jpg" alt="Kegiatan 4" />
+      <div class="kegiatan-info">
+        <h3>Lomba Estafet Sendal</h3>
+        <p>17 Agustus 2024</p>
+      </div>
+    </div>
+    
+    <div class="kegiatan-card" data-tahun="2023">
+      <img src="img/20246.jpg" alt="Kegiatan 5" />
+      <div class="kegiatan-info">
+        <h3>Pawai Hari Kemerdekaan</h3>
+        <p>19 Agustus 2023</p>
+      </div>
+    </div>
+
+    <div class="kegiatan-card" data-tahun="2023">
+      <img src="img/20231.jpg" alt="Kegiatan 5" />
+      <div class="kegiatan-info">
+        <h3>Panitia 17 Agustusan & Ibu PKK</h3>
+        <p>17 Agustus 2023</p>
+      </div>
+    </div>
+    
+    <div class="kegiatan-card" data-tahun="2023">
+      <img src="img/20232.jpg" alt="Kegiatan 5" />
+      <div class="kegiatan-info">
+        <h3>Lomba Ambil Koin Di Semangka</h3>
+        <p>17 Agustus 2023</p>
+      </div>
+    </div>
+    
+    <div class="kegiatan-card" data-tahun="2023">
+      <img src="img/20233.jpg" alt="Kegiatan 5" />
+      <div class="kegiatan-info">
+        <h3>Lomba Memasukan Paku Ke Botol</h3>
+        <p>17 Agustus 2023</p>
+      </div>
+    </div>
+    
+    <div class="kegiatan-card" data-tahun="2023">
+      <img src="img/20234.jpg" alt="Kegiatan 5" />
+      <div class="kegiatan-info">
+        <h3>Lomba Estafet Air</h3>
+        <p>17 Agustus 2023</p>
+      </div>
+    </div>
+   
+  <!-- Tombol Kembali ke Beranda -->
+  <div class="back-to-home">
+    <a href="index.html">
+      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+    </a>
   </div>
 
-  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
-
   <script>
-    const track = document.getElementById("slideTrack");
-    const totalSlides = track.children.length;
-    let current = 0;
+    function filterTahun(tahun) {
+      const cards = document.querySelectorAll(".kegiatan-card");
+      cards.forEach(card => {
+        if (tahun === "all" || card.dataset.tahun === tahun) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
 
-    function showSlide(index) {
-      const width = track.children[0].clientWidth;
-      track.style.transform = `translateX(-${width * index}px)`;
+      // Tambah/kurangi class active pada tombol
+      const buttons = document.querySelectorAll(".filter-buttons button");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      document.querySelector(`.filter-buttons button[onclick*="${tahun}"]`).classList.add("active");
     }
-
-    function nextSlide() {
-      current = (current + 1) % totalSlides;
-      showSlide(current);
-    }
-
-    function prevSlide() {
-      current = (current - 1 + totalSlides) % totalSlides;
-      showSlide(current);
-    }
-
-    setInterval(nextSlide, 5000);
   </script>
 </body>
 </html>
